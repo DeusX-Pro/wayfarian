@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Travel Diary App</title>
+
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      color: #fff;
+      overflow-x: hidden;
+      background: #000;
+    }
+
+    section {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    /* ===== HERO SECTION ===== */
+    .hero video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+      filter: brightness(70%);
+    }
+
+    .hero h1 {
+      font-size: 4rem;
+      text-align: center;
+      line-height: 1.2;
+      opacity: 0;
+    }
+
+    /* ===== FEATURES SECTION ===== */
+    .features {
+      background: linear-gradient(to bottom, #0a0a0a, #141414);
+      flex-direction: column;
+      gap: 80px;
+      text-align: center;
+      padding: 5rem 1rem;
+    }
+
+    .feature {
+      max-width: 700px;
+      margin: 0 auto;
+      transform: translateY(100px);
+      opacity: 0;
+    }
+
+    .feature img {
+      width: 100%;
+      border-radius: 20px;
+      margin-top: 1rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+
+    /* ===== PARALLAX MOUNTAINS SECTION ===== */
+    .parallax {
+      background: url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1600&q=80') center/cover fixed;
+    }
+
+    .parallax h2 {
+      font-size: 3rem;
+      text-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
+      transform: translateY(100px);
+      opacity: 0;
+    }
+
+    /* ===== DOWNLOAD SECTION ===== */
+    .download {
+      background: #0f0f0f;
+      flex-direction: column;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .download h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+      transform: translateY(50px);
+      opacity: 0;
+    }
+
+    .btn {
+      background: linear-gradient(45deg, #00b4d8, #48cae4);
+      color: #fff;
+      padding: 1rem 2.5rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-size: 1.2rem;
+      font-weight: bold;
+      box-shadow: 0 0 20px rgba(72, 202, 228, 0.6);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 30px rgba(72, 202, 228, 1);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <section class="hero">
+    <video autoplay muted loop>
+      <source src="https://cdn.coverr.co/videos/coverr-mountain-landscape-7716/1080p.mp4" type="video/mp4">
+    </video>
+    <h1>Capture Every Journey.<br>Relive Every Moment.</h1>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="features">
+    <div class="feature">
+      <h2>Track Your Travels</h2>
+      <p>Log every destination, note every memory, and see your adventures unfold on a map.</p>
+      <img src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=1600&q=80" alt="Travel Map" />
+    </div>
+
+    <div class="feature">
+      <h2>Join Challenges</h2>
+      <p>Compete with friends in photo challenges, location hunts, and travel quests!</p>
+      <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80" alt="Beach Travel" />
+    </div>
+
+    <div class="feature">
+      <h2>Build Your Gallery</h2>
+      <p>Store all your travel moments in one place and share your journey with others.</p>
+      <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80" alt="Travel Gallery" />
+    </div>
+  </section>
+
+  <!-- PARALLAX -->
+  <section class="parallax">
+    <h2>Because every mountain has a story...</h2>
+  </section>
+
+  <!-- DOWNLOAD -->
+  <section class="download">
+    <h2>Ready to Begin Your Adventure?</h2>
+    <a href="#" class="btn">Download the App</a>
+  </section>
+
+  <script>
+    gsap.registerPlugin(ScrollTrigger);
+
+    // HERO Text Fade-In
+    gsap.to(".hero h1", {
+      duration: 2,
+      y: 0,
+      opacity: 1,
+      ease: "power3.out",
+    });
+
+    // Features Animation on Scroll
+    gsap.utils.toArray(".feature").forEach((el) => {
+      gsap.to(el, {
+        scrollTrigger: {
+          trigger: el,
+          start: "top 80%",
+        },
+        y: 0,
+        opacity: 1,
+        duration: 1.5,
+        ease: "power3.out",
+      });
+    });
+
+    // Parallax text
+    gsap.to(".parallax h2", {
+      scrollTrigger: {
+        trigger: ".parallax",
+        start: "top 80%",
+      },
+      y: 0,
+      opacity: 1,
+      duration: 2,
+      ease: "power3.out",
+    });
+
+    // Download section
+    gsap.to(".download h2", {
+      scrollTrigger: {
+        trigger: ".download",
+        start: "top 85%",
+      },
+      y: 0,
+      opacity: 1,
+      duration: 1.5,
+    });
+  </script>
+</body>
+</html>
