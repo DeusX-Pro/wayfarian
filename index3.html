@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wayfarian — Travel Diary App</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F9F9F8; /* Soft off-white */
+            color: #1A1A1A;
+            -webkit-font-smoothing: antialiased;
+        }
+        .hero-gradient {
+            background: radial-gradient(circle at 50% 50%, rgba(212, 175, 55, 0.05) 0%, rgba(249, 249, 248, 0) 70%);
+        }
+        .glass-nav {
+            background: rgba(249, 249, 248, 0.8);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+        .btn-shadow {
+            box-shadow: 0 4px 14px 0 rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body class="selection:bg-stone-200">
+
+    <nav class="fixed top-0 w-full z-50 glass-nav">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="text-xl font-semibold tracking-tight">Wayfarian</div>
+            <div class="hidden md:flex space-x-10 text-sm font-medium text-stone-500">
+                <a href="#features" class="hover:text-black transition-colors">Features</a>
+                <a href="#experience" class="hover:text-black transition-colors">Experience</a>
+                <a href="#" class="hover:text-black transition-colors">Journal</a>
+            </div>
+            <div>
+                <a href="#" class="bg-black text-white px-6 py-2.5 rounded-full text-sm font-medium hover:bg-stone-800 transition-all btn-shadow">
+                    Download
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="relative pt-40 pb-24 overflow-hidden hero-gradient">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col lg:flex-row items-center gap-16">
+                <div class="w-full lg:w-1/2">
+                    <h1 class="text-6xl lg:text-7xl font-semibold leading-[1.1] tracking-tight mb-8">
+                        Track every journey. <br>Keep every memory.
+                    </h1>
+                    <p class="text-xl text-stone-500 mb-10 max-w-lg leading-relaxed">
+                        Wayfarian is a quiet space for your travels. Automatically stitch your photos, paths, and thoughts into a beautiful, private timeline.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#" class="bg-black text-white px-8 py-4 rounded-full text-lg font-medium inline-flex items-center justify-center hover:scale-[1.02] transition-transform">
+                            Download on iPhone
+                        </a>
+                        <div class="flex items-center px-4 text-stone-400 text-sm">
+                            Available exclusively on iOS
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full lg:w-1/2 relative">
+                    <div class="absolute -inset-4 bg-stone-200/50 rounded-[3rem] blur-3xl -z-10"></div>
+                    <div class="rounded-2xl overflow-hidden shadow-2xl border border-white/20">
+                        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&q=80&w=2000" 
+                             alt="Scenic Coastal Road" 
+                             class="w-full h-[600px] object-cover">
+                    </div>
+                    <div class="absolute -bottom-10 -left-10 w-64 bg-white p-4 rounded-2xl shadow-2xl border border-stone-100 hidden md:block">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-10 h-10 bg-stone-100 rounded-full"></div>
+                            <div class="h-3 w-24 bg-stone-100 rounded"></div>
+                        </div>
+                        <div class="space-y-2">
+                            <div class="h-3 w-full bg-stone-50 rounded"></div>
+                            <div class="h-3 w-5/6 bg-stone-50 rounded"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-12 border-y border-stone-200 bg-white">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-8">
+            <span class="text-stone-400 font-medium tracking-widest text-xs uppercase">Trusted by travelers from 140+ countries</span>
+            <div class="flex items-center gap-12 grayscale opacity-50">
+                <span class="text-xl font-bold italic tracking-tighter">Conde Nast</span>
+                <span class="text-xl font-bold tracking-tighter">TRAVEL + LEISURE</span>
+                <span class="text-xl font-bold tracking-tighter">Monocle</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="py-32">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-16">
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Everything in one timeline</h3>
+                    <p class="text-stone-500 leading-relaxed">Your photos, notes, and GPS tracks are woven together chronologically. No more searching through folders.</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Never lose a moment</h3>
+                    <p class="text-stone-500 leading-relaxed">Smart sensors detect your stops and prompt you to log a thought, ensuring the small details stay vivid.</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Travel together, effortlessly</h3>
+                    <p class="text-stone-500 leading-relaxed">Shared journals allow friends to contribute photos to a single, high-fidelity trip archive in real-time.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-stone-100/50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col lg:flex-row items-center gap-20">
+                <div class="w-full lg:w-1/2">
+                    <img src="https://images.unsplash.com/photo-1527631746610-bca00a040d60?auto=format&fit=crop&q=80&w=1200" 
+                         alt="Mapping Journey" 
+                         class="rounded-3xl shadow-lg border border-white">
+                </div>
+                <div class="w-full lg:w-1/2">
+                    <span class="text-stone-400 font-medium text-sm mb-4 block">Visual Mapping</span>
+                    <h2 class="text-4xl font-semibold mb-6 tracking-tight">The path you took, exactly as it was.</h2>
+                    <p class="text-lg text-stone-500 leading-relaxed mb-8">
+                        Wayfarian uses low-energy background tracking to map your journey across continents. Zoom in to see the exact cafe where you had that perfect espresso, or zoom out to see your global footprint.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col lg:flex-row-reverse items-center gap-20">
+                <div class="w-full lg:w-1/2">
+                    <img src="https://images.unsplash.com/photo-1530789253388-582c481c54b0?auto=format&fit=crop&q=80&w=1200" 
+                         alt="Emotional Travel" 
+                         class="rounded-3xl shadow-lg border border-stone-200">
+                </div>
+                <div class="w-full lg:w-1/2">
+                    <span class="text-stone-400 font-medium text-sm mb-4 block">Private Journaling</span>
+                    <h2 class="text-4xl font-semibold mb-6 tracking-tight">Focus on the feeling, not the filter.</h2>
+                    <p class="text-lg text-stone-500 leading-relaxed mb-8">
+                        This isn't social media. Wayfarian is built for you. A clean, distraction-free interface that lets you record your authentic impressions without the pressure of likes or followers.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="py-32 bg-black text-white overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <h2 class="text-5xl lg:text-7xl font-semibold mb-12 tracking-tight">Relive your journeys anytime.</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-20">
+                <img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&q=80&w=600" class="rounded-xl h-64 w-full object-cover opacity-80 hover:opacity-100 transition-opacity" alt="Travel Image">
+                <img src="https://images.unsplash.com/photo-1503220317375-aaad61436b1b?auto=format&fit=crop&q=80&w=600" class="rounded-xl h-64 w-full object-cover translate-y-8 opacity-80 hover:opacity-100 transition-opacity" alt="Travel Image">
+                <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&q=80&w=600" class="rounded-xl h-64 w-full object-cover opacity-80 hover:opacity-100 transition-opacity" alt="Travel Image">
+                <img src="https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&q=80&w=600" class="rounded-xl h-64 w-full object-cover translate-y-8 opacity-80 hover:opacity-100 transition-opacity" alt="Travel Image">
+            </div>
+        </div>
+    </section>
+
+    <section class="py-40 bg-[#F9F9F8]">
+        <div class="max-w-3xl mx-auto px-6 text-center">
+            <h2 class="text-4xl font-semibold mb-8 tracking-tight">Start your next journey the right way.</h2>
+            <div class="flex flex-col sm:flex-row justify-center gap-6">
+                <a href="#" class="bg-black text-white px-10 py-5 rounded-full text-lg font-medium hover:scale-[1.02] transition-transform btn-shadow">
+                    Get Wayfarian for iOS
+                </a>
+            </div>
+            <p class="mt-8 text-stone-400 text-sm">Join 50,000+ mindful travelers.</p>
+        </div>
+    </section>
+
+    <footer class="py-20 border-t border-stone-200">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-start gap-12">
+                <div class="space-y-6">
+                    <div class="text-xl font-semibold tracking-tight">Wayfarian</div>
+                    <p class="text-stone-400 text-sm max-w-xs leading-relaxed">
+                        The premium standard for digital travel journaling. Designed for the curious and the wandering.
+                    </p>
+                </div>
+                <div class="grid grid-cols-2 gap-20">
+                    <div class="space-y-4">
+                        <h4 class="text-xs font-bold uppercase tracking-widest text-stone-400">Product</h4>
+                        <ul class="space-y-2 text-sm">
+                            <li><a href="#" class="text-stone-600 hover:text-black">Features</a></li>
+                            <li><a href="#" class="text-stone-600 hover:text-black">Community</a></li>
+                            <li><a href="#" class="text-stone-600 hover:text-black">Download</a></li>
+                        </ul>
+                    </div>
+                    <div class="space-y-4">
+                        <h4 class="text-xs font-bold uppercase tracking-widest text-stone-400">Legal</h4>
+                        <ul class="space-y-2 text-sm">
+                            <li><a href="#" class="text-stone-600 hover:text-black">Privacy</a></li>
+                            <li><a href="#" class="text-stone-600 hover:text-black">Terms</a></li>
+                            <li><a href="#" class="text-stone-600 hover:text-black">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-20 pt-8 border-t border-stone-100 text-stone-400 text-xs flex justify-between">
+                <span>&copy; 2024 Wayfarian App Inc. All rights reserved.</span>
+                <span>Crafted for explorers.</span>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
